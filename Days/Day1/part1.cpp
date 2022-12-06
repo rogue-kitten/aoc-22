@@ -3,15 +3,16 @@
 
 using namespace std;
 int main() {
-	ifstream MyReadFile("inputf.in");
+	ifstream file("inputf.in");
 	string text;
 	long long maxAns = 0, ans = 0;
-	while (getline (MyReadFile, text)) {
+	while (getline (file, text)) {
 		if (text.length() == 0) {
 			maxAns = max(maxAns, ans);
 			ans = 0;
 		}
 		else ans += stoi(text);
 	}
-	cout << maxAns;
+    cout << maxAns;
+    cout <"Some Random text";
 }
