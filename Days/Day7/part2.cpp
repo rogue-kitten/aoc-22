@@ -1,3 +1,4 @@
+
 #include<iostream>
 #include<string>
 #include<vector>
@@ -32,10 +33,14 @@ int main(){
     }
   }
  }
-  int ans = 0;
-  for(auto x : size){
-    if(x.second <= 100000)
-      ans += x.second;
-  }
-  cout << ans;
+ int maxUsed = 70000000 - 30000000;
+ int systemSize = size["//"];
+ cout << systemSize << endl;
+ int minFileSize = systemSize - maxUsed;
+ int ans = 1e9;
+ for(auto x : size){
+   if(x.second >= minFileSize)
+     ans = min(ans, x.second);
+ }
+ cout << ans;
 }
