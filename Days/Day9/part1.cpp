@@ -1,7 +1,6 @@
 #include<iostream>
 #include<fstream>
 #include<set>
-#include <bits/stdc++.h>
 
 using namespace std;
 #define mp make_pair
