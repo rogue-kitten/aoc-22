@@ -12,7 +12,7 @@ void renderSig(int reg, int &crt){
   }
   if(crt == reg - 1 || crt == reg || crt == reg + 1)
     cout << "#";
-  else cout << ".";
+  else cout << " ";
 }
 
 int main(){
