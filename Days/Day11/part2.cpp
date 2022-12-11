@@ -3,11 +3,15 @@
 #include<vector>
 #include<sstream>
 #include<algorithm>
+#include <chrono>
+
+using namespace std::chrono;
 
 using namespace std;
 #define ll long long
 
 int main() {
+  auto start = high_resolution_clock::now();
 
   string str;
   vector<vector<ll>> items; //stores all the items contained by the monkeys;
@@ -129,10 +133,11 @@ int main() {
     }
   }
 
-  for (int i = 0; i < monkeys; i++) {
-    cout << inspection[i] << endl;
-  }
+  
   sort(inspection.rbegin(), inspection.rend());
   ll ans = inspection[0] * inspection[1];
-  cout << ans;
+  cout << ans << endl;
+  auto stop = high_resolution_clock::now();
+  auto duration = duration_cast<microseconds>(stop - start);
+  cout << "Time: " << duration.count() << " microseconds:" << endl;
 }
