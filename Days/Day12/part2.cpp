@@ -37,7 +37,7 @@ int main(){
     int col = q.front().second.second;
     q.pop();
     
-    if(grid[row][col] == 'S') {
+    if(grid[row][col] == 'a') {
       cout << dist;
       return 0;
     }
