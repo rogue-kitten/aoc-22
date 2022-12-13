@@ -11,7 +11,6 @@ using namespace std;
 #define ll long long
 
 int main() {
-  auto start = high_resolution_clock::now();
 
   string str;
   vector<vector<ll>> items; //stores all the items contained by the monkeys;
@@ -70,6 +69,7 @@ int main() {
       options.push_back(make_pair(op1, op2));
     }
   }
+  auto start = high_resolution_clock::now();
 
   int monkeys = items.size();
   ll lcm = 1;
