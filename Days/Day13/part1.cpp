@@ -59,6 +59,7 @@ int main(){
       }
     }
     if(i == line1.length()) right.push_back(list);
+    if(j == line2.length()) break;
   }
   int ans = 0;
   cout << accumulate(right.begin(), right.end(), ans) << endl;
