@@ -1,16 +1,18 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include <chrono>
 #include<numeric>
 
 using namespace std;
+using namespace std::chrono;
 
 bool isNumeric(char a){
   return (a >= '0' && a <= '9');
 }
 
 int main(){
-
+  auto start = high_resolution_clock::now();
   string line1, line2;
   vector<int> right;
   int list = 0;
@@ -47,17 +49,20 @@ int main(){
         }
         else if(line2[j] == ']') break;
         else if(line1[i] == '[' || line1[i] == ','){ 
-            i++;
-            continue;
+          i++;
+          continue;
         }
         else if(line2[j] == '[' || line2[j] == ','){
-            j++;
-            continue;
-          }
+        j++;
+        continue;
+        }
       }
     }
     if(i == line1.length()) right.push_back(list);
   }
   int ans = 0;
   cout << accumulate(right.begin(), right.end(), ans) << endl;
+  auto stop = high_resolution_clock::now();
+  auto duration = duration_cast<microseconds>(stop - start);
+  cout << "Time: " << duration.count() << " microseconds:" << endl;
 }
