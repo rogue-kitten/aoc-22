@@ -2,7 +2,6 @@
 #include<string>
 #include<unordered_map>
 #include<chrono>
-#include<fstream>
 
 using namespace std;
 using namespace std::chrono;
@@ -10,10 +9,9 @@ using namespace std::chrono;
 int main(){
   auto start = high_resolution_clock::now();
   string line;
-  ifstream file("inp.txt");
   unordered_map<int, unordered_map<int, bool>> grid;
   int maxY = -1e9;
-  while(getline(file, line)){
+  while(getline(cin, line)){
     int i = 0, prevX = 0, prevY = 0;
     while(i < line.length()){
       while(!isdigit(line[i])) i++;
@@ -81,6 +79,7 @@ int main(){
   }
   cout << grains << endl;
   auto stop = high_resolution_clock::now();
-  auto duration = duration_cast<milliseconds>(stop - start);
-  cout << "Time: " << duration.count() << " millisecond" << endl;
+  auto duration = duration_cast<microseconds>(stop - start);
+  cout << "Time:" << duration.count() << " microseconds";
+    
 }
